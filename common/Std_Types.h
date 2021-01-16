@@ -14,4 +14,7 @@
 #define STD_ON 1
 #define STD_OFF 0
 
+#define STD_HIGH                1u
+#define STD_LOW                 0u
+
 #endif
