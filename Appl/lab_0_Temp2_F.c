@@ -2,7 +2,7 @@
  * lab_0_Temp.c
  *
  *  Created on: Feb 2, 2023
- *      Author: Esraa Mohamed
+ *      Author: Israa Mohamed
  */
 
 #include "Dio.h"
