@@ -8,51 +8,6 @@
 #ifndef MERNAH_REPO_MCAL_INCLUDE_DIO_H_
 #define MERNAH_REPO_MCAL_INCLUDE_DIO_H_
 #include "Std_Types.h"
-
-typedef struct
-{
-	uint8 Dio_Dir_A0 : 1;
-	uint8 Dio_Dir_A1 : 1;
-	uint8 Dio_Dir_A2 : 1;
-	uint8 Dio_Dir_A3 : 1;
-	uint8 Dio_Dir_A4 : 1;
-	uint8 Dio_Dir_A5 : 1;
-	uint8 Dio_Dir_A6 : 1;
-	uint8 Dio_Dir_A7 : 1;
-
-	uint8 Dio_Dir_B0 : 1;
-	uint8 Dio_Dir_B1 : 1;
-	uint8 Dio_Dir_B2 : 1;
-	uint8 Dio_Dir_B3 : 1;
-	uint8 Dio_Dir_B4 : 1;
-	uint8 Dio_Dir_B5 : 1;
-	uint8 Dio_Dir_B6 : 1;
-	uint8 Dio_Dir_B7 : 1;
-
-	uint8 Dio_Dir_C0 : 1;
-	uint8 Dio_Dir_C1 : 1;
-	uint8 Dio_Dir_C2 : 1;
-	uint8 Dio_Dir_C3 : 1;
-	uint8 Dio_Dir_C4 : 1;
-	uint8 Dio_Dir_C5 : 1;
-	uint8 Dio_Dir_C6 : 1;
-	uint8 Dio_Dir_C7 : 1;
-
-	uint8 Dio_Dir_D0 : 1;
-	uint8 Dio_Dir_D1 : 1;
-	uint8 Dio_Dir_D2 : 1;
-	uint8 Dio_Dir_D3 : 1;
-	uint8 Dio_Dir_D4 : 1;
-	uint8 Dio_Dir_D5 : 1;
-	uint8 Dio_Dir_D6 : 1;
-	uint8 Dio_Dir_D7 : 1;
-}Dio_StrBFType;
-typedef union
-{
-	Dio_StrBFType DIR_B;
-	uint8 CfgDirArr[4];
-
-}Dio_CfgUnionType;
 typedef enum
 {
 	Dio_Port_A,
@@ -105,10 +60,55 @@ typedef enum
 	Dio_ChannelLevel_Low,
 	Dio_ChannelLevel_High
 }Dio_ChannelLevelType;
+
+typedef struct
+{
+	uint8 Dio_Dir_A0 : 1;
+	uint8 Dio_Dir_A1 : 1;
+	uint8 Dio_Dir_A2 : 1;
+	uint8 Dio_Dir_A3 : 1;
+	uint8 Dio_Dir_A4 : 1;
+	uint8 Dio_Dir_A5 : 1;
+	uint8 Dio_Dir_A6 : 1;
+	uint8 Dio_Dir_A7 : 1;
+
+	uint8 Dio_Dir_B0 : 1;
+	uint8 Dio_Dir_B1 : 1;
+	uint8 Dio_Dir_B2 : 1;
+	uint8 Dio_Dir_B3 : 1;
+	uint8 Dio_Dir_B4 : 1;
+	uint8 Dio_Dir_B5 : 1;
+	uint8 Dio_Dir_B6 : 1;
+	uint8 Dio_Dir_B7 : 1;
+
+	uint8 Dio_Dir_C0 : 1;
+	uint8 Dio_Dir_C1 : 1;
+	uint8 Dio_Dir_C2 : 1;
+	uint8 Dio_Dir_C3 : 1;
+	uint8 Dio_Dir_C4 : 1;
+	uint8 Dio_Dir_C5 : 1;
+	uint8 Dio_Dir_C6 : 1;
+	uint8 Dio_Dir_C7 : 1;
+
+	uint8 Dio_Dir_D0 : 1;
+	uint8 Dio_Dir_D1 : 1;
+	uint8 Dio_Dir_D2 : 1;
+	uint8 Dio_Dir_D3 : 1;
+	uint8 Dio_Dir_D4 : 1;
+	uint8 Dio_Dir_D5 : 1;
+	uint8 Dio_Dir_D6 : 1;
+	uint8 Dio_Dir_D7 : 1;
+}Dio_StrBFType;
+typedef union
+{
+	Dio_StrBFType Dir_B;
+	uint8 CfgDirArr[4];
+
+}Dio_CfgUnionType;
+
+
 extern void Dio_Init(void);
 extern void Dio_WriteChannel(Dio_ChannelType ChannelId, Dio_ChannelLevelType ChannelLevel);
 extern Dio_ChannelLevelType Dio_ReadChannel(Dio_ChannelType ChannelId);
 extern void Dio_FlipChannel(Dio_ChannelType ChannelId);
-extern Dio_ChannelLevelType Dio_ReadPORT(Dio_ChannelType ChannelId);
-extern void Dio_WritePORT(Dio_ChannelType ChannelId,uint8 value);
 #endif /* MERNAH_REPO_MCAL_INCLUDE_DIO_H_ */

@@ -1,0 +1,44 @@
+/*
+ * Gpt_Cfg.h
+ *
+ *  Created on: Jan 30, 2021
+ *      Author: future
+ */
+
+#ifndef AMITLATTE_USERCONFIG_GPT2_CFG_H_
+#define AMITLATTE_USERCONFIG_GPT2_CFG_H_
+/*
+ * PLEASE choose from the followings
+ *
+ * GPT2_PRESCALER_1       0x01
+ * GPT2_PRESCALER_8       0x02
+ * GPT2_PRESCALER_32      0x03
+ * GPT2_PRESCALER_64      0x04
+ * GPT2_PRESCALER_128     0x05
+ * GPT2_PRESCALER_256     0x06
+ * GPT2_PRESCALER_1024    0x07
+ *
+ * */
+#define GPT2_PRESCALER_SELECTOR     0x07
+/*
+ * PLEASE choose from the followings
+ * GPT2_TIMER_MODE_ONESHOT          0x00
+ * GPT2_TIMER_MODE_CONTINOUSE       0x01
+ * */
+#define GPT2_TIMER_MODE_SELECTOR       GPT2_TIMER_MODE_CONTINOUSE
+
+#define GPT2_INTERRUPT_OVF_EN          DISABLE
+#define GPT2_INTERRUPT_CTC_EN          DISABLE  /**/
+#define GPT2_OUTPUT_COMPARE_OC0        DISABLE
+
+#define GPT2_CALLBACK_PTR              NULL
+/*
+ * PLEASE SELCT FROM THE FOLLOWING
+ * GPT2_WAVEFORM_GEN_NORMAL         0x00
+ * GPT2_WAVEFORM_GEN_CTC            0x02
+ * GPT2_WAVEFORM_GEN_FAST_PWM       0x03
+ * GPT2_WAVEFORM_GEN_PHASE_CORRECT  0x01
+ *
+ * */
+#define GPT2_WAVEFORM_GEN_MODE         GPT2_WAVEFORM_GEN_FAST_PWM
+#endif /* AMITLATTE_USERCONFIG_GPT2_CFG_H_ */
